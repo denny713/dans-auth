@@ -53,7 +53,7 @@ public class AccountController extends BaseController {
         Set<GrantedAuthority> auth = new HashSet<>();
         auth.add(new SimpleGrantedAuthority("ROLE_CLIENT"));
         auth.add(new SimpleGrantedAuthority("ROLE_TRUSTED_CLIENT"));
-        User principal = new User("maa-backoffice", "b@ck0ff1ce", true, true, true, true, auth);
+        User principal = new User("dans-auth", "b@ck0ff1ce", true, true, true, true, auth);
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(principal, "b@ck0ff1ce", auth);
         ResponseEntity<OAuth2AccessToken> token = tokenEndpoint.postAccessToken(authToken, param);
         if (token.getBody() == null) {
